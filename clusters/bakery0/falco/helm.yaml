@@ -19,6 +19,8 @@ spec:
     falco:
       syscallEventDrops:
         actions: []
+    fakeEventGenerator:
+      enabled: false    
     customRules:
       cookierules.yaml: |+
         - rule: GITOPS DAY 2021
