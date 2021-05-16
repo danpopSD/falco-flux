@@ -15,6 +15,8 @@ spec:
   values:
     falcosidekick:
       enabled: true
+      webui:
+         enabled: true
     ebpf:
       enabled: true
     customRules:
