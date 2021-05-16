@@ -25,25 +25,6 @@ spec:
           output: Cookie recipes tampering detected, secure your cookies, make an espresso and eat all of them if necessary. No one can have them. (uid=%user.uid container_id=%container.id container_name=%container.name image=%container.image.repository:%container.image.tag oldpath=%evt.arg.oldpath path=%evt.arg.path fd.name=%fd.name name=%evt.arg.name)
           priority: WARNING
           tags: [importantrecipesalert]
-
----
-apiVersion: helm.toolkit.fluxcd.io/v2beta1
-kind: HelmRelease
-metadata:
-  name: falcosidekick
-  namespace: falco
-spec:
-  interval: 5m
-  chart:
-    spec:
-      chart: falcosidekick
-      sourceRef:
-        kind: HelmRepository
-        name: falco
-      interval: 1m
-  values:
-    customFields:
-      fluxcd.io: cookies
 ---
 apiVersion: source.toolkit.fluxcd.io/v1beta1
 kind: HelmRepository
