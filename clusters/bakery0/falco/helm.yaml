@@ -20,7 +20,7 @@ spec:
       syscallEventDrops:
         actions: []
     fakeEventGenerator:
-      enabled: false    
+      enabled: true   
     customRules:
       cookierules.yaml: |+
         - rule: GITOPS DAY 2021
