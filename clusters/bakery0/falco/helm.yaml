@@ -8,12 +8,13 @@ spec:
   chart:
     spec:
       chart: falco
-      version: '1.7.1'
       sourceRef:
         kind: HelmRepository
         name: falco
       interval: 1m
   values:
+    falcosidekick:
+      enabled: true
     ebpf:
       enabled: true
     falco:
@@ -39,7 +40,6 @@ spec:
   chart:
     spec:
       chart: falcosidekick
-      version: '0.2.2'
       sourceRef:
         kind: HelmRepository
         name: falco
