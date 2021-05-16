@@ -17,9 +17,6 @@ spec:
       enabled: true
     ebpf:
       enabled: true
-    falco:
-      syscallEventDrops:
-        actions: []  
     customRules:
       cookierules.yaml: |+
         - rule: GITOPS DAY 2021
