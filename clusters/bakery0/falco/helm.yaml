@@ -18,9 +18,7 @@ spec:
       enabled: true
     falco:
       syscallEventDrops:
-        actions: []
-    fakeEventGenerator:
-      enabled: true   
+        actions: []  
     customRules:
       cookierules.yaml: |+
         - rule: GITOPS DAY 2021 TEST
