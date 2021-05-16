@@ -18,7 +18,7 @@ spec:
       webui:
          enabled: true
     fakeEventGenerator:
-      enabled: false     
+      enabled: true    
     ebpf:
       enabled: true
     customRules:
