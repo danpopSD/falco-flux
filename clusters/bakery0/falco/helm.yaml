@@ -29,18 +29,6 @@ spec:
           output: Cookie recipes tampering detected, secure your cookies. (uid=%user.uid container_id=%container.id container_name=%container.name image=%container.image.repository:%container.image.tag oldpath=%evt.arg.oldpath path=%evt.arg.path fd.name=%fd.name name=%evt.arg.name)
           priority: EMERGENCY
           tags: [importantrecipesalert]
-      cookienginx-network.yaml: |-    
-        - macro: nginx_consider_syscalls 
-          condition: (evt.num < 0)
-        - macro: app_nginx
-          condition: container and container.image contains "nginx"
-
-        - rule: Unauthorized process opened an outbound connection (nginx)
-          desc: A nginx process tried to open an outbound connection and is not whitelisted
-          condition: outbound and evt.rawres >= 0 and app_nginx
-          output: Non-whitelisted process opened an outbound connection (command=%proc.cmdline connection=%fd.name)
-          priority: WARNING
-
 ---
 apiVersion: source.toolkit.fluxcd.io/v1beta1
 kind: HelmRepository
